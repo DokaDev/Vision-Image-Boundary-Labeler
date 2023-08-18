@@ -4,14 +4,43 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Vision_Image_Boundary_Labeler"
-        mc:Ignorable="d" Title="MainWindow" Width="400" Height="500">
+        mc:Ignorable="d" Title="MainWindow" Width="1280" Height="720">
     <Grid>
-        <StackPanel Orientation="Vertical">
-            <Button Content="1" Click="Button_Click" Width="60" Height="60"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
-            <Button Content="2" Click="Button_Click_1" Width="60" Height="60"/>
-        </StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
-        
+        <Grid Grid.Row="0" ColumnSpan="2" Background="Aquamarine">
+            <TextBlock Text="CurrentFileName : 0.jpg / Related Label FileName: 0.jpg.json" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10, 0, 0, 0"/>
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button Content="Prev" Padding="5" Margin="5"/>
+                <TextBlock Text="CurrentImageIndexNumber" VerticalAlignment="Center" Margin="10, 0, 10, 0"/>
+                <Button Content="Next" Padding="5" Margin="5"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0, 0, 10, 0">
+                <Button Content="Clear" Padding="5" Margin="5"/>
+                <Button Content="Save" Padding="5" Margin="5"/>
+            </StackPanel>
+        </Grid>
+
+        <ListView Name="ClassListView" Grid.Row="1" Grid.Column="0" HorizontalContentAlignment="Center" Margin="10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Index" Width="40" DisplayMemberBinding="{Binding ClassIndex}"/>
+                    <GridViewColumn Header="Class Name" Width="100" DisplayMemberBinding="{Binding ClassName}"/>
+                    <GridViewColumn Header="Label" Width="100" DisplayMemberBinding="{Binding LabelCount}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Canvas Grid.Row="1" Grid.Column="1" Margin="10" Background="AntiqueWhite"/>
     </Grid>
 </Window>

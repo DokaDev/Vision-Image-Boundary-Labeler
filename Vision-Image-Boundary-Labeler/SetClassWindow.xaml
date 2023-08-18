@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Vision_Image_Boundary_Labeler"
         mc:Ignorable="d"
-        Title="SetClassWindow" Height="450" Width="400">
+        Title="SetClassWindow" Height="450" Width="450">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
 
-        <ListView Name="ClassListView" Width="300" HorizontalContentAlignment="Center" Margin="0, 10, 0, 0">
+        <ListView Name="ClassListView" Width="350" HorizontalContentAlignment="Center" Margin="0, 10, 0, 0" MouseDoubleClick="ClassListView_OnMouseDoubleClick">
             <ListView.View> 
                 <GridView>
                     <GridViewColumn Header="Index" Width="40" DisplayMemberBinding="{Binding ClassIndex}"/>
-                    <GridViewColumn Header="Class Name" Width="130" DisplayMemberBinding="{Binding ClassName}"/>
+                    <GridViewColumn Header="Class Name" Width="270" DisplayMemberBinding="{Binding ClassName}"/>
                 </GridView>
             </ListView.View>
         </ListView>
