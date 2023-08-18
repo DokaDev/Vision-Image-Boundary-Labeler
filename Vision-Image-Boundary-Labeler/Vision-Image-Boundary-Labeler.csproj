@@ -6,6 +6,12 @@
     <RootNamespace>Vision_Image_Boundary_Labeler</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <UseWindowsForms>True</UseWindowsForms>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="WPF-UI" Version="2.0.3" />
+  </ItemGroup>
 
 </Project>
